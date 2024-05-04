@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sortvisualizer.Controller">
+  <bottom>
+    <ToolBar fx:id="toolBarForAllItems" prefHeight="70.0" prefWidth="1920.0" styleClass="toolBar" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+      <items>
+        <Label prefHeight="25.0" prefWidth="12.0">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+        <ChoiceBox id="choiceBoxSort" fx:id="sortSelectChoiceBox" prefHeight="29.0" prefWidth="195.0">
+          <opaqueInsets>
+            <Insets />
+          </opaqueInsets></ChoiceBox>
+        <Label alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="15.0" />
+        <Label fx:id="arraySizeLabel" prefHeight="25.0" prefWidth="94.0" styleClass="defaultLabel" stylesheets="@styles.css" text="Array Size">
+          <font>
+            <Font name="Consolas" size="16.0" />
+          </font>
+        </Label>
+        <Slider fx:id="arraySizeSlider" blockIncrement="1.0" max="300.0" min="10.0" />
+        <Label fx:id="arraySizeNumberLabel" prefHeight="25.0" prefWidth="32.0" styleClass="defaultLabel" stylesheets="@styles.css" text="0">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+        <Label alignment="CENTER" prefHeight="25.0" prefWidth="10.0">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+        <Label fx:id="delaySizeLabel" prefHeight="25.0" prefWidth="57.0" styleClass="defaultLabel" stylesheets="@styles.css" text="Delay">
+          <font>
+            <Font name="Consolas" size="16.0" />
+          </font>
+        </Label>
+        <Slider fx:id="delaySizeSlider" blockIncrement="1.0" />
+        <Label fx:id="delaySizeNumberLabel" prefHeight="18.0" prefWidth="67.0" styleClass="defaultLabel" stylesheets="@styles.css" text="3ms">
+          <font>
+            <Font name="Consolas" size="16.0" />
+          </font>
+        </Label>
+        <Button fx:id="startButton" mnemonicParsing="false" onAction="#onStartButtonClick" prefHeight="28.0" prefWidth="149.0" stylesheets="@styles.css" text="Start sorting" />
+        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="15.0">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+        <Button fx:id="randomizeBarsButton" mnemonicParsing="false" onAction="#onRandomizeBarsButtonClick" text="Randomize Bars" />
+        <Label prefHeight="18.0" prefWidth="15.0" />
+        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitButtonClick" text="Exit" />
+        <Label prefHeight="18.0" prefWidth="37.0" />
+        <Label fx:id="timePromptLabel" styleClass="defaultLabel" stylesheets="@styles.css" text="Time:" />
+        <Label fx:id="timeSizeNumberLabel" prefHeight="18.0" prefWidth="123.0" styleClass="defaultLabel" stylesheets="@styles.css" text="0.000s" />
+        <Label fx:id="statusPromptLabel" prefHeight="25.0" prefWidth="71.0" styleClass="defaultLabel" stylesheets="@styles.css" text="Status:">
+          <font>
+            <Font name="Consolas" size="16.0" />
+          </font>
+        </Label>
+        <Label fx:id="currentStatusLabel" prefHeight="25.0" prefWidth="110.0" stylesheets="@styles.css">
+          <font>
+            <Font name="Consolas" size="16.0" />
+          </font>
+        </Label>
+        <Label prefHeight="25.0" prefWidth="0.0">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+        <Label fx:id="algorithmPromptLabel" styleClass="defaultLabel" stylesheets="@styles.css" text="Algorithm:">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+        <Label fx:id="currentAlgorithmLabel" prefHeight="25.0" prefWidth="154.0" stylesheets="@styles.css">
+          <font>
+            <Font size="16.0" />
+          </font>
+        </Label>
+      </items>
+    </ToolBar>
+  </bottom>
+  <center>
+    <BarChart fx:id="barChart" alternativeRowFillVisible="false" animated="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" verticalGridLinesVisible="false" verticalZeroLineVisible="false" BorderPane.alignment="CENTER">
+      <xAxis>
+        <CategoryAxis opacity="0.0" side="BOTTOM" tickLength="0.0" tickMarkVisible="false" />
+      </xAxis>
+      <yAxis>
+        <NumberAxis opacity="0.0" side="LEFT" />
+      </yAxis>
+    </BarChart>
+  </center>
+</BorderPane>

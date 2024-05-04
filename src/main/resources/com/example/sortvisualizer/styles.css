@@ -1,0 +1,24 @@
+.defaultLabel {
+
+    -fx-font-size: 16;
+    -fx-font-family: Consolas;
+    -fx-text-fill: white;
+
+}
+
+.toolBar {
+
+    -fx-font-size: 16;
+    -fx-font-family: Consolas;
+    -fx-background-color: #464646;
+
+}
+
+
+.choiceBox {
+
+    -fx-font-size: 16;
+    -fx-font-family: Consolas;
+
+
+}
